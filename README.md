@@ -63,9 +63,6 @@ _Tham khảo:  [Giải thích các thuật ngữ](http://web.vivicorp.com/tu-die
 		- `<sub></sub>`
 		- `<mark></mark>`
 		- `<iframe></iframe>`
-#### 4. Bài tập		
+#### 4. Bài tập
  \- Hãy dựng cấu trúc 1 đoạn văn sau bằng các thẻ HTML
-<iframe src="http://jsbin.com/rubavayuvo/edit?html,output" width="500px" height="500px">
-<p>Không hỗ trợ</p>
-</iframe>
- 
+[Bài tập](http://jsbin.com/rubavayuvo/edit?output)
