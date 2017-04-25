@@ -66,6 +66,7 @@ _Tham khảo:  [Giải thích các thuật ngữ](http://web.vivicorp.com/tu-die
 #### 4. Bài tập
  \- Hãy dựng cấu trúc 1 đoạn văn sau bằng các thẻ HTML
 [Bài tập](http://jsbin.com/rubavayuvo/edit?output){:target="_blank"}
+<a href="http://example.com/" target="_blank">example</a>
 #### 5. Tham khảo
 - [hocwebchuan.com](http://hocwebchuan.com/reference/tag/html5/){:target="_blank"}
 - [w3school.com](https://www.w3schools.com/html/default.asp){:target="_blank"}
