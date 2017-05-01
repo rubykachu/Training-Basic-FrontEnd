@@ -1,4 +1,4 @@
-#CSS
+# CSS
 ### 1. CSS là gì?
 \- *Cascading Style Sheets*  là một ngôn ngữ được sử dụng để tìm và định dạng lại các phần tử được tạo ra bởi các ngôn ngữ đánh dấu. Cụ thể: Nó có thể thay đổi màu sắc, phong chữ, in đậm, in nghiêng, layout thiết kế v.v..
 > Nói nôm na trong thực tế: HTML được ví như là 1 cô gái Nude, chưa được makeup (Nghĩa là chỉ có da với xương thôi ^^). Muốn cho cô gái đó trở nên lộng lẫy, đẹp hơn thì cần phải có 1 số thứ như như son, phấn, áo, quần, nước hoa, giày, guốc v.v... Vậy những thứ làm cho cô gái trở nên xinh đẹp hơn đó được gọi là CSS.
