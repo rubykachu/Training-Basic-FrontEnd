@@ -70,14 +70,18 @@ _Tham khảo:  [Giải thích các thuật ngữ](http://web.vivicorp.com/tu-die
 [Bài tập](http://jsbin.com/rubavayuvo/edit?output)
 
 **Bài tập về form**
+
 _Bài tập 1_
 ![image](https://user-images.githubusercontent.com/27756008/37913621-86bf3c32-313f-11e8-8d13-3ad4825b6b4c.png)
+
 
 _Bài tập 2_
 ![image](https://user-images.githubusercontent.com/27756008/37914063-8a70f108-3140-11e8-982a-960412eb6827.png)
 
+
 _Bài tập 3_
 ![image](https://user-images.githubusercontent.com/27756008/37914539-a66dc9ac-3141-11e8-937c-5ca501fd3248.png)
+
 
 _Bài tập 4_
 ![image](https://user-images.githubusercontent.com/27756008/37914785-3ad16d88-3142-11e8-97a4-27acc4b3775e.png)
