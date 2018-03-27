@@ -1,7 +1,7 @@
 
 # I. HTML
 ## 1. HTML là gì?
-- _HyperText Markup Language_ là ngôn ngữ đánh dấu siêu văn bản
+- _HyperText Markup Language_ là ngôn ngữ đánh dấu siêu văn bản.
 - Được sử dụng để tạo ra website. Mỗi website có nhiều trang và mỗi trang là 1 file html.
 - Được hình thành bởi các phần tử HTML (HTML Elements)  được quy định bằng các cặp thẻ (tag).
 - Có 2 loại thẻ:
