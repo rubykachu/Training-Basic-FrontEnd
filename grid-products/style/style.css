@@ -29,6 +29,7 @@ body {
   background: #222 url(../image/transparent.jpg) top left no-repeat fixed;
   height: 246px;
   margin-bottom: 20px;
+
 }
 .page-header__nav {
   background-color: rgba(0, 0, 0, 0.5)
@@ -37,25 +38,44 @@ body {
   list-style: none;
   display: flex;
   align-items: baseline;
+  margin-left: -15px;
+  margin-right: -15px;
 }
 .nav__item--compare {
   margin-left: auto;
   font-weight: bold;
 }
 .nav__item a {
+  position: relative;
   display: inline-block;
   color: #fff;
-  padding: 8px 10px 5px;
+  padding: 8px 15px 5px;
   font-size: 14px;
   text-transform: capitalize;
   border-bottom: 5px solid transparent;
-  -webkit-transition: all .3s linear;
-     -moz-transition: all .3s linear;
-          transition: all .3s linear;
 }
-.nav__item a:hover, .nav__item .active {
+.nav__item .active {
   border-bottom: 5px solid rgba(19, 194, 224, 0.8)
 }
+.nav__item a, .nav__link::after {
+  -webkit-transition: all .3s ease-in-out;
+     -moz-transition: all .3s ease-in-out;
+          transition: all .3s ease-in-out;
+}
+.nav__link::after {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  display: block;
+  width: 0;
+  height: 5px;
+  background: rgba(19, 194, 224, 0.8);
+}
+.nav__link:hover::after {
+  width: 100%;
+}
+
 .nav__item--compare .active {
   border-bottom-color: #55efc4;
 }
