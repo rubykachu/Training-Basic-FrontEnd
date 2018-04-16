@@ -42,7 +42,7 @@ function destroy(event) {
 }
 
 // toggle complete
-function toggle( ) {
+function toggle(event) {
 	var el = event.target;
 	$(el).closest('li').toggleClass('completed');
 }
