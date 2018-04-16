@@ -1,62 +1,67 @@
-// constants
-var ENTER_KEY = 13;
-var ESCAPE_KEY = 27;
+// 35:00 - 39:00 https://youtu.be/LzrWzs_577k
+// Declare namespace. Namespace is a object
+var todos = {};
 
-// create new todo function
-// onkeyup="create(event);"
-function create(e) {
-	// console.log('create()');
-	var $input = $(e.target);
-	var val = $input.val().trim();
+(function() {
+	'use strict';
+	// constants
+	var ENTER_KEY = 13;
+	var ESCAPE_KEY = 27;
 
-	if (e.which !== ENTER_KEY || !val) {
-		return;
+	// create new todo function
+	// onkeyup="create(event);"
+	function create(e) {
+		// console.log('create()');
+		var $input = $(e.target);
+		var val = $input.val().trim();
+
+		if (e.which !== ENTER_KEY || !val) {
+			return;
+		}
+
+		var todoItem = {
+			id: (new Date()).getTime(),
+			title: val,
+			completed: false
+		};
+
+		$input.val('');
+		/*jshint multistr:true*/
+		var html = '\
+		<li class="" data-id="' + todoItem.id + '">\
+			<div class="view">\
+				<input class="toggle" type="checkbox" ">\
+				<label>' + todoItem.title + '</label>\
+				<button class="destroy"></button>\
+			</div>\
+			<input class="edit" value="' + todoItem.title + '">\
+		</li>';
+
+		$('#todo-list').append(html);
 	}
 
-	var todoItem = {
-		id: (new Date()).getTime(),
-		title: val,
-		completed: false
-	};
+	// remove a todo item
+	function destroy(event) {
+		var el = event.target;
 
-	$input.val('');
-	/*jshint multistr:true*/
-	var html = '\
-	<li class="" data-id="' + todoItem.id + '">\
-		<div class="view">\
-			<input class="toggle" type="checkbox" onchange="toggle(event); ">\
-			<label>' + todoItem.title + '</label>\
-			<button class="destroy" onclick="destroy(event);"></button>\
-		</div>\
-		<input class="edit" value="' + todoItem.title + '">\
-	</li>';
+		$(el).closest('li').remove();
+	}
 
-	$('#todo-list').append(html);
-}
+	// toggle complete
+	function toggle(event) {
+		var el = event.target;
 
-// remove a todo item
-function destroy(event) {
-	var el = event.target;
+		$(el).closest('li').toggleClass('completed');
+	}
 
-	$(el).closest('li').remove();
-}
-
-// toggle complete
-function toggle(event) {
-	var el = event.target;
-	$(el).closest('li').toggleClass('completed');
-}
+	// exports
+	todos.create  = create;
+	todos.destroy = destroy;
+	todos.toggle  = toggle;
+}());
 
 $(document).ready(function(){
-	$('#new-todo').on('keyup', function(event){
-		create(event);
-	});
-
-	$('.destroy').on('click', function(event){
-		destroy(event);
-	});
-
-	$('.toggle').on('change', function(event){
-		toggle(event);
-	});
+	$('#new-todo').on('keyup', todos.create);
+	$('#todo-list').on('click', '.destroy', todos.destroy);
+	$('#todo-list').on('change', '.toggle', todos.toggle);
 });
