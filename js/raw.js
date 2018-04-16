@@ -46,3 +46,17 @@ function toggle(event) {
 	var el = event.target;
 	$(el).closest('li').toggleClass('completed');
 }
+
+$(document).ready(function(){
+	$('#new-todo').on('keyup', function(event){
+		create(event);
+	});
+
+	$('.destroy').on('click', function(event){
+		destroy(event);
+	});
+
+	$('.toggle').on('change', function(event){
+		toggle(event);
+	});
+});
