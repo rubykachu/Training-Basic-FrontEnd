@@ -1,7 +1,46 @@
 *{
   padding: 0;
   margin: 0;
+  box-sizing: border-box;
 }
 .wrapper {
-  background: url(../images/transparent.jpg)
+  background: url(../images/transparent.jpg);
+  background-size: cover;
+  height: 246px;
+}
+.site-top {
+  background-color: rgba(0, 0, 0, .5);
+}
+.container {
+  width: 1200px;
+  margin: 0 auto;
+}
+.nav li {
+  display: inline-block;
+}
+/*.nav li a {
+  display: inline-block;
+  color: #fff;
+  text-transform: capitalize;
+  text-decoration: none;
+  padding: 25px 15px 5px;
+  border-bottom: 5px solid transparent;
+  transition: all .5s ease;
+}
+.nav li:hover a {
+  border-bottom: 5px solid #13a6c1;
+}*/
+
+.nav li a {
+  display: inline-block;
+  color: #fff;
+  text-transform: capitalize;
+  text-decoration: none;
+  padding: 25px 15px 5px;
+}
+.nav li a::after {
+  content: '';
+  display: block;
+  height: 5px;
+  background-color: red;
 }
