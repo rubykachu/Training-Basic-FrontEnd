@@ -4,6 +4,8 @@
 		<meta charset="utf-8">
 		<title>NauJS • TodoMVC</title>
 		<link rel="stylesheet" href="css/style.css">
+		<script src="https://code.jquery.com/jquery-3.1.0.js"></script>
+
 	</head>
 	<body>
 		<section id="todoapp">
@@ -36,7 +38,20 @@
 			<p>Created by <a href="http://twitter.com/trongthanh">Thanh Tran</a></p>
 		</footer>
 		<!-- jQuery & RequireJS need to be downloaded separately -->
-		<script src="https://code.jquery.com/jquery-3.1.0.js"></script>
-		<script src="js/raw.js" type="text/javascript"></script>
+		<!-- <script src="https://code.jquery.com/jquery-3.1.0.js"></script> -->
+		<!-- Refactor 1 -->
+		<!-- <script src="js/refactors/1/raw.js" type="text/javascript"></script> -->
+
+		<!-- Refactor 2 -->
+		<!-- <script src="js/refactors/2/AppView.js" type="text/javascript"></script>
+		<script src="js/refactors/2/TodoItem.js" type="text/javascript"></script>
+		<script src="js/refactors/2/app.js" type="text/javascript"></script> -->
+
+		<!-- Refactor 3 -->
+		<script src="js/lib/require.js" data-main="js/refactors/3/app.js" type="text/javascript"></script>
+		<script>
+			console.log('here');
+		</script>
+
 	</body>
 </html>
