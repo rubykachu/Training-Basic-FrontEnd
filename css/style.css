@@ -2,6 +2,9 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+  font-family: tahoma;
+  font-weight: normal;
+  font-stretch: condensed;
 }
 .wrapper {
   background: url(../images/transparent.jpg);
@@ -32,15 +35,25 @@
 }*/
 
 .nav li a {
+  position: relative;
   display: inline-block;
   color: #fff;
   text-transform: capitalize;
   text-decoration: none;
+  border-bottom: 5px solid transparent;
   padding: 25px 15px 5px;
 }
 .nav li a::after {
   content: '';
   display: block;
   height: 5px;
-  background-color: red;
+  position: absolute;
+  bottom: -5px;
+  left: 0px;
+  background-color: #13a6c1;
+  width: 0;
+  transition: all .2s ease-in-out;
+}
+.nav li a:hover::after {
+  width: 100%;
 }
