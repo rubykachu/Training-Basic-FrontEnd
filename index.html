@@ -7,18 +7,16 @@
   <!-- Latest compiled and minified CSS -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/jquery.mCustomScrollbar.min.css">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
-  <!-- jQuery library -->
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  <!-- Latest compiled JavaScript -->
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-  <title>Blogs</title>
+
+  <title>M-Blogs</title>
 </head>
 <body>
   <div class="wrapper">
     <div class="row">
       <!-- SideNav -->
-      <aside class="col-sm-2 fluid-column bg-dark profile">
+      <aside class="col-xs-2 fluid-column bg-dark profile">
         <div class="profile__card">
           <span class="profile__name">Minh Tang Q.</span><br>
           <span class="profile__job">Developer Ruby</span>
@@ -52,20 +50,20 @@
       <!-- /SideNav -->
 
       <!-- Wall -->
-      <main class="col-sm-10">
+      <main class="col-xs-10">
 
         <nav class="nav">
           <div class="container">
             <div class="row">
 
-              <div class="col-sm-6">
+              <div class="col-xs-6">
                 <div class="input-group">
-                  <input type="text" class="form-control input-sm search-input" name="search" placeholder="Search...">
+                  <input type="text" class="form-control input-xs search-input" name="search" placeholder="Search...">
                   <a class="input-group-addon search-button"><i class="glyphicon glyphicon-search"></i></a>
                 </div>
               </div>
 
-              <div class="col-sm-6">
+              <div class="col-xs-6">
                 <ul class="list-inline text-right notify">
                   <li class="notify__item"><i class="fas fa-user-friends fa-lg"></i></li>
                   <li class="notify__item"><i class="fas fa-comment-dots fa-lg"></i></li>
@@ -78,13 +76,233 @@
         </nav>
 
         <div class="row">
-          <div class="col-sm-10">
+          <div class="col-xs-10">
+            <div class="row card-wrapper">
 
+              <!-- Main Content -->
+              <div class="col-xs-8 card-posts" id="js-wall-wrapper">
+                <div class="well">
+                  <form class="input-group box-status" role="form">
+                    <textarea class="form-control " placeholder="What do you think"></textarea>
+                    <span class="input-group-btn">
+                      <button class="card-post-submit" type="button"><i class="fas fa-paper-plane fa-lg"></i></button>
+                    </span>
+                  </form>
+                </div>
+
+                <div class="well">
+                  <header class="card-header">
+                    <div class="card-options">
+                      <div class="dropdown">
+                        <a href="javascript:void(0);" data-toggle="dropdown" aria-expanded="false"><i class="fas fa-ellipsis-h" aria-hidden="true"></i></a>
+                        <ul class="dropdown-menu dropdown-menu-right">
+                          <li><a href="javascript:void(0);"><i class="fa fa-window-close" aria-hidden="true"></i> <strong>Hide post</strong><br><small>See fewer posts like this</small></a></li>
+                          <li><a href="javascript:void(0);"><i class="fa fa-window-close" aria-hidden="true"></i> <strong>Hide all from Carlo Fontanos</strong><br><small>Stop seeing posts from this Page</small></a></li>
+                          <li class="divider"></li>
+                          <li><a href="javascript:void(0);"><i class="fa fa-exclamation-triangle" aria-hidden="true"></i> Report post</a></li>
+                          <li><a href="javascript:void(0);"><i class="fas fa-external-link-alt"></i> Save link</a></li>
+                          <li><a href="javascript:void(0);"><i class="fa fa-globe" aria-hidden="true"></i> Turn on notifications for this post</a></li>
+                          <li><a href="javascript:void(0);"><i class="fa fa-code" aria-hidden="true"></i> Embed</a></li>
+                          <li class="divider"></li>
+                          <li><a href="javascript:void(0);"><i class="fa fa-chevron-down" aria-hidden="true"></i> More options</a></li>
+                        </ul>
+                      </div>
+                    </div>
+
+                    <div class="card-author-avatar"><a href="javascript:void(0);"><img src="images/profile.jpg"></a></div>
+                    <div class="card-author"><a href="javascript:void(0);">Master Admin</a></div>
+                    <div class="card-time">2017-08-13 14:22:02 <i class="fa fa-globe" aria-hidden="true"></i></div>
+                  </header>
+
+                  <main class="card-body">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur mollitia dicta sed amet, corporis iure veritatis velit incidunt et quia eligendi saepe, aperiam odio molestias repudiandae quasi animi. Dicta, suscipit!</p>
+                    <p><span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Exercitationem dolorem architecto quod, labore harum dolores minus rem, magni non soluta doloribus officiis vitae, id ex repellendus minima quam atque odio?</span>
+                    <span>Sit cupiditate amet, excepturi est accusantium illum molestiae ea voluptatem repellat exercitationem omnis illo. Odio, sapiente accusantium. Maxime optio fugiat voluptate vero vel cum provident, fuga neque commodi nobis! Explicabo.</span>
+                    <span>Mollitia modi quas quo quisquam at iusto maxime magnam soluta dicta, ipsam, accusamus cupiditate quibusdam totam beatae, nam dolor ut labore. Esse harum laudantium incidunt enim! Voluptates odit sequi tempora.</span></p>
+                  </main>
+
+                  <footer class="card-footer">
+                    <form>
+                      <div class="input-group">
+                        <textarea name="comment" class="form-control box-comment" placeholder="Add a comment.."></textarea>
+                        <div class="input-group-btn box-comment-action">
+                          <i class="far fa-smile fa-lg"></i>
+                        </div>
+                      </div>
+                    </form>
+                  </footer>
+                </div>
+
+                <div class="well">
+                  <header class="card-header">
+                    <div class="card-options">
+                      <div class="dropdown">
+                        <a href="javascript:void(0);" data-toggle="dropdown" aria-expanded="false"><i class="fas fa-ellipsis-h" aria-hidden="true"></i></a>
+                        <ul class="dropdown-menu dropdown-menu-right">
+                          <li><a href="javascript:void(0);"><i class="fa fa-window-close" aria-hidden="true"></i> <strong>Hide post</strong><br><small>See fewer posts like this</small></a></li>
+                          <li><a href="javascript:void(0);"><i class="fa fa-window-close" aria-hidden="true"></i> <strong>Hide all from Carlo Fontanos</strong><br><small>Stop seeing posts from this Page</small></a></li>
+                          <li class="divider"></li>
+                          <li><a href="javascript:void(0);"><i class="fa fa-exclamation-triangle" aria-hidden="true"></i> Report post</a></li>
+                          <li><a href="javascript:void(0);"><i class="fas fa-external-link-alt"></i> Save link</a></li>
+                          <li><a href="javascript:void(0);"><i class="fa fa-globe" aria-hidden="true"></i> Turn on notifications for this post</a></li>
+                          <li><a href="javascript:void(0);"><i class="fa fa-code" aria-hidden="true"></i> Embed</a></li>
+                          <li class="divider"></li>
+                          <li><a href="javascript:void(0);"><i class="fa fa-chevron-down" aria-hidden="true"></i> More options</a></li>
+                        </ul>
+                      </div>
+                    </div>
+
+                    <div class="card-author-avatar"><a href="javascript:void(0);"><img src="images/profile.jpg"></a></div>
+                    <div class="card-author"><a href="javascript:void(0);">Master Admin</a></div>
+                    <div class="card-time">2017-08-13 14:22:02 <i class="fa fa-globe" aria-hidden="true"></i></div>
+                  </header>
+
+                  <main class="card-body">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur mollitia dicta sed amet, corporis iure veritatis velit incidunt et quia eligendi saepe, aperiam odio molestias repudiandae quasi animi. Dicta, suscipit!</p>
+                    <p><span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Exercitationem dolorem architecto quod, labore harum dolores minus rem, magni non soluta doloribus officiis vitae, id ex repellendus minima quam atque odio?</span>
+                    <span>Sit cupiditate amet, excepturi est accusantium illum molestiae ea voluptatem repellat exercitationem omnis illo. Odio, sapiente accusantium. Maxime optio fugiat voluptate vero vel cum provident, fuga neque commodi nobis! Explicabo.</span>
+                    <span>Mollitia modi quas quo quisquam at iusto maxime magnam soluta dicta, ipsam, accusamus cupiditate quibusdam totam beatae, nam dolor ut labore. Esse harum laudantium incidunt enim! Voluptates odit sequi tempora.</span></p>
+                  </main>
+
+                  <footer class="card-footer">
+                    <form>
+                      <div class="input-group">
+                        <textarea name="comment" class="form-control box-comment" placeholder="Add a comment.."></textarea>
+                        <div class="input-group-btn box-comment-action">
+                          <i class="far fa-smile fa-lg"></i>
+                        </div>
+                      </div>
+                    </form>
+                  </footer>
+                </div>
+
+                <div class="well">
+                  <header class="card-header">
+                    <div class="card-options">
+                      <div class="dropdown">
+                        <a href="javascript:void(0);" data-toggle="dropdown" aria-expanded="false"><i class="fas fa-ellipsis-h" aria-hidden="true"></i></a>
+                        <ul class="dropdown-menu dropdown-menu-right">
+                          <li><a href="javascript:void(0);"><i class="fa fa-window-close" aria-hidden="true"></i> <strong>Hide post</strong><br><small>See fewer posts like this</small></a></li>
+                          <li><a href="javascript:void(0);"><i class="fa fa-window-close" aria-hidden="true"></i> <strong>Hide all from Carlo Fontanos</strong><br><small>Stop seeing posts from this Page</small></a></li>
+                          <li class="divider"></li>
+                          <li><a href="javascript:void(0);"><i class="fa fa-exclamation-triangle" aria-hidden="true"></i> Report post</a></li>
+                          <li><a href="javascript:void(0);"><i class="fas fa-external-link-alt"></i> Save link</a></li>
+                          <li><a href="javascript:void(0);"><i class="fa fa-globe" aria-hidden="true"></i> Turn on notifications for this post</a></li>
+                          <li><a href="javascript:void(0);"><i class="fa fa-code" aria-hidden="true"></i> Embed</a></li>
+                          <li class="divider"></li>
+                          <li><a href="javascript:void(0);"><i class="fa fa-chevron-down" aria-hidden="true"></i> More options</a></li>
+                        </ul>
+                      </div>
+                    </div>
+
+                    <div class="card-author-avatar"><a href="javascript:void(0);"><img src="images/profile.jpg"></a></div>
+                    <div class="card-author"><a href="javascript:void(0);">Master Admin</a></div>
+                    <div class="card-time">2017-08-13 14:22:02 <i class="fa fa-globe" aria-hidden="true"></i></div>
+                  </header>
+
+                  <main class="card-body">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur mollitia dicta sed amet, corporis iure veritatis velit incidunt et quia eligendi saepe, aperiam odio molestias repudiandae quasi animi. Dicta, suscipit!</p>
+                    <p><span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Exercitationem dolorem architecto quod, labore harum dolores minus rem, magni non soluta doloribus officiis vitae, id ex repellendus minima quam atque odio?</span>
+                    <span>Sit cupiditate amet, excepturi est accusantium illum molestiae ea voluptatem repellat exercitationem omnis illo. Odio, sapiente accusantium. Maxime optio fugiat voluptate vero vel cum provident, fuga neque commodi nobis! Explicabo.</span>
+                    <span>Mollitia modi quas quo quisquam at iusto maxime magnam soluta dicta, ipsam, accusamus cupiditate quibusdam totam beatae, nam dolor ut labore. Esse harum laudantium incidunt enim! Voluptates odit sequi tempora.</span></p>
+                  </main>
+
+                  <footer class="card-footer">
+                    <form>
+                      <div class="input-group">
+                        <textarea name="comment" class="form-control box-comment" placeholder="Add a comment.."></textarea>
+                        <div class="input-group-btn box-comment-action">
+                          <i class="far fa-smile fa-lg"></i>
+                        </div>
+                      </div>
+                    </form>
+                  </footer>
+                </div>
+
+                <div class="well">
+                  <header class="card-header">
+                    <div class="card-options">
+                      <div class="dropdown">
+                        <a href="javascript:void(0);" data-toggle="dropdown" aria-expanded="false"><i class="fas fa-ellipsis-h" aria-hidden="true"></i></a>
+                        <ul class="dropdown-menu dropdown-menu-right">
+                          <li><a href="javascript:void(0);"><i class="fa fa-window-close" aria-hidden="true"></i> <strong>Hide post</strong><br><small>See fewer posts like this</small></a></li>
+                          <li><a href="javascript:void(0);"><i class="fa fa-window-close" aria-hidden="true"></i> <strong>Hide all from Carlo Fontanos</strong><br><small>Stop seeing posts from this Page</small></a></li>
+                          <li class="divider"></li>
+                          <li><a href="javascript:void(0);"><i class="fa fa-exclamation-triangle" aria-hidden="true"></i> Report post</a></li>
+                          <li><a href="javascript:void(0);"><i class="fas fa-external-link-alt"></i> Save link</a></li>
+                          <li><a href="javascript:void(0);"><i class="fa fa-globe" aria-hidden="true"></i> Turn on notifications for this post</a></li>
+                          <li><a href="javascript:void(0);"><i class="fa fa-code" aria-hidden="true"></i> Embed</a></li>
+                          <li class="divider"></li>
+                          <li><a href="javascript:void(0);"><i class="fa fa-chevron-down" aria-hidden="true"></i> More options</a></li>
+                        </ul>
+                      </div>
+                    </div>
+
+                    <div class="card-author-avatar"><a href="javascript:void(0);"><img src="images/profile.jpg"></a></div>
+                    <div class="card-author"><a href="javascript:void(0);">Master Admin</a></div>
+                    <div class="card-time">2017-08-13 14:22:02 <i class="fa fa-globe" aria-hidden="true"></i></div>
+                  </header>
+
+                  <main class="card-body">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur mollitia dicta sed amet, corporis iure veritatis velit incidunt et quia eligendi saepe, aperiam odio molestias repudiandae quasi animi. Dicta, suscipit!</p>
+                    <p><span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Exercitationem dolorem architecto quod, labore harum dolores minus rem, magni non soluta doloribus officiis vitae, id ex repellendus minima quam atque odio?</span>
+                    <span>Sit cupiditate amet, excepturi est accusantium illum molestiae ea voluptatem repellat exercitationem omnis illo. Odio, sapiente accusantium. Maxime optio fugiat voluptate vero vel cum provident, fuga neque commodi nobis! Explicabo.</span>
+                    <span>Mollitia modi quas quo quisquam at iusto maxime magnam soluta dicta, ipsam, accusamus cupiditate quibusdam totam beatae, nam dolor ut labore. Esse harum laudantium incidunt enim! Voluptates odit sequi tempora.</span></p>
+                  </main>
+
+                  <footer class="card-footer">
+                    <form>
+                      <div class="input-group">
+                        <textarea name="comment" class="form-control box-comment" placeholder="Add a comment.."></textarea>
+                        <div class="input-group-btn box-comment-action">
+                          <i class="far fa-smile fa-lg"></i>
+                        </div>
+                      </div>
+                    </form>
+                  </footer>
+                </div>
+
+              </div>
+              <!-- /Main Content -->
+
+              <!-- Advertise -->
+              <div class="col-xs-4 advertise">
+                <div class="panel panel-default">
+                  <div class="panel-body">
+                    <p class="lead">Social Good</p>
+                    <p>1,200 Followers, 83 Posts</p>
+
+                    <p>
+                      <img src="https://lh6.googleusercontent.com/-5cTTMHjjnzs/AAAAAAAAAAI/AAAAAAAAAFk/vgza68M4p2s/s28-c-k-no/photo.jpg" width="28px" height="28px">
+                      <img src="https://lh4.googleusercontent.com/-6aFMDiaLg5M/AAAAAAAAAAI/AAAAAAAABdM/XjnG8z60Ug0/s28-c-k-no/photo.jpg" width="28px" height="28px">
+                      <img src="https://lh4.googleusercontent.com/-9Yw2jNffJlE/AAAAAAAAAAI/AAAAAAAAAAA/u3WcFXvK-g8/s28-c-k-no/photo.jpg" width="28px" height="28px">
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <!-- /Advertise -->
+
+            </div>
           </div>
 
           <!-- Side Friends -->
-          <aside class="col-sm-2 side-friends">
-            <h1>Hello</h1>
+          <aside class="col-xs-2 side-friends affix-top">
+            <p class="friend__title">danh sách bạn bè</p>
+            <a href="" class="friend__item">
+              <img alt="" class="friend__img" src="images/profile.jpg">
+              <span class="friend__name">Tang Quoc Minh</span>
+              <div class="friend_activity"></div>
+            </a>
+            <a href="" class="friend__item">
+              <img alt="" class="friend__img" src="images/profile.jpg">
+              <span class="friend__name">Tang Quoc Minh</span>
+              <div class="friend_activity"></div>
+            </a>
+            <a href="" class="friend__item">
+              <img alt="" class="friend__img" src="images/profile.jpg">
+              <span class="friend__name">Tang Quoc Minh</span>
+              <div class="friend_activity"></div>
+            </a>
           </aside>
           <!-- /Side Friends -->
 
@@ -92,8 +310,23 @@
       </main>
       <!-- Wall -->
 
-
     </div>
   </div>
+
+  <!-- jQuery library -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <!-- Latest compiled JavaScript -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <!-- Resize textarea -->
+  <script src='js/autosize.min.js'></script>
+  <script src='js/jquery.mCustomScrollbar.js'></script>
+	<script>
+		autosize(document.querySelectorAll('textarea'));
+    $(document).ready(function(){
+      // $.mCustomScrollbar.defaults.scrollButtons.enable=true; //enable scrolling buttons by default
+      $.mCustomScrollbar.defaults.axis="y"; //enable 2 axis scrollbars by default
+      $("#js-wall-wrapper").mCustomScrollbar({theme:"rounded-dots-dark"});
+    });
+	</script>
 </body>
 </html>

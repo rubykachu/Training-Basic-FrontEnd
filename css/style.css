@@ -4,6 +4,17 @@
   --txt-color: #fff;
   --main-color: #5c5edc;
   --main-color-hover: #8182e0;
+  --main-color-dark: #4749cc;
+}
+a, a:hover {
+  text-decoration: none;
+}
+a {
+  color: var(--main-color);
+}
+:focus{
+  -webkit-box-shadow: none !important;
+  box-shadow: none !important;
 }
 body {
   background: #e9ebee;
@@ -15,7 +26,6 @@ body {
 .bg-dark {
   background-color: var(--bg-dark); !important;
 }
-
 /* Profile */
 .profile {
   padding: 0;
@@ -187,10 +197,150 @@ body {
   margin: 0;
   padding: 0
 }
+
+/* Side Friend */
 .side-friends {
-  overflow: hidden;
   position: fixed;
   height: 100vh;
-  right: 0;
   box-shadow: inset 2px 0 2px -2px #8e8c8c;
+}
+.affix-top {
+  overflow: hidden;
+  right: 0;
+  width: 190px;
+}
+.friend__title {
+  font-weight: bold;
+  text-transform: uppercase;
+  line-height: 30px;
+  font-size: 12px;
+  color: #4c4c4c
+}
+.friend__item {
+  display: block;
+  width: 100%;
+  margin: 15px 0;
+  position: relative;
+}
+.friend__item:hover {
+  text-decoration: none;
+}
+.friend__img {
+  display: inline-block;
+  vertical-align: middle;
+  width: 40px;
+  border-radius: 999px;
+}
+.friend__name {
+  color: #4c4c4c;
+  font-size: 12px;
+  padding-left: 2px;
+}
+.friend_activity {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgb(66, 183, 42);
+  border-radius: 50%;
+  display: inline-block;
+  height: 6px;
+  width: 6px;
+  margin-left: 4px;
+}
+
+/* Main Content */
+#js-wall-wrapper .mCSB_container {
+  margin-right: 25px;
+}
+#js-wall-wrapper .mCSB_dragger_bar {
+  background-color: var(--main-color);
+}
+.card-wrapper {
+  margin-top: 10pt;
+}
+.card-posts {
+  padding-right: 5pt;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  height: calc(100vh - 60px);
+}
+.card-posts .well {
+  border-color: #ddd;
+  background-color: #fff;
+}
+.box-status textarea{
+  border: none;
+  border-radius: 0;
+  background: #fff;
+  -webkit-appearance:none;
+  box-shadow: none;
+  resize: none;
+  min-height: 60px;
+}
+.card-posts .input-group-btn {
+  font-size: inherit;
+}
+.card-post-submit {
+  border-radius: 999px;
+  text-align: center;
+  line-height: 47px;
+  height: 47px;
+  width: 47px;
+  background-color: var(--main-color);
+  color: #fff;
+  outline: none;
+  transition: all ease .5s
+}
+.card-post-submit:hover {
+  background-color: var(--main-color-dark);
+}
+.card-author-avatar {
+  float: left;
+}
+.card-author-avatar img {
+  margin-right: 10px;
+  width: 40px;
+  height: 40px;
+  border-radius: 999px;
+}
+.card-options {
+  float: right;
+}
+.card-author a {
+  font-weight: bold;
+  color: var(--main-color-dark)
+}
+.card-time {
+  color: var(--txt-dark);
+  font-size: 12px;
+}
+.card-body {
+  clear: both;
+  margin-top: 10px;
+}
+.box-comment {
+  -webkit-appearance:none;
+  box-shadow: none;
+  resize: none;
+  border-right: 0;
+}
+.box-comment:focus {
+  outline: none;
+  border: 1px solid #ccc;
+  border-right: 0;
+}
+.box-comment:empty {
+  height: 35px;
+}
+.box-comment-action {
+  padding-right: 5px;
+  border: 1px solid #ccc;
+  border-left: 0;
+  border-radius: 0 4px 4px 0;
+}
+
+/* Advertise */
+.advertise {
+  padding-left: 5pt;
 }
