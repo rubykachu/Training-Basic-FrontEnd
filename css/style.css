@@ -249,7 +249,9 @@ body {
   margin-left: 4px;
 }
 
-/* Main Content */
+/** ====================
+ * MAIN CONTENT
+ =======================*/
 #js-wall-wrapper .mCSB_container {
   margin-right: 25px;
 }
@@ -269,7 +271,11 @@ body {
   border-color: #ddd;
   background-color: #fff;
 }
-.box-status textarea{
+
+/** ====================
+ * Box Status
+ =======================*/
+.box-status__content{
   border: none;
   border-radius: 0;
   background: #fff;
@@ -278,10 +284,10 @@ body {
   resize: none;
   min-height: 60px;
 }
-.card-posts .input-group-btn {
+.box-status .input-group-btn {
   font-size: inherit;
 }
-.card-post-submit {
+.box-status__submit {
   border-radius: 999px;
   text-align: center;
   line-height: 47px;
@@ -290,11 +296,22 @@ body {
   background-color: var(--main-color);
   color: #fff;
   outline: none;
-  transition: all ease .5s
+  transition: all ease .5s;
+  -webkit-transition: all ease .5s;
+  -moz-transition: all ease .5s;
+  -ms-transition: all ease .5s;
 }
 .card-post-submit:hover {
   background-color: var(--main-color-dark);
 }
+.box-status__content::-webkit-input-placeholder { font-size: 20px; }
+.box-status__content::-moz-input-placeholder { font-size: 20px; }
+.box-status__content::-ms-input-placeholder { font-size: 20px; }
+
+/** ====================
+ * Card Informatoon Author
+ =======================*/
+
 .card-author-avatar {
   float: left;
 }
@@ -319,11 +336,42 @@ body {
   clear: both;
   margin-top: 10px;
 }
+
+/** ====================
+ * Card Action
+ =======================*/
+.card-action {
+  display: flex;
+  justify-content: center;
+  border-top: 1px solid #ddd;
+  border-bottom: 1px solid #ddd;
+  padding: 10px 0;
+}
+.card-action__item {
+  display: block;
+  width: 100%;
+  color: #606770;
+  font-size: 14px;
+  text-align: center;
+}
+.card-action__feel .fa-thumbs-up{
+  color: #1B9CFC;
+}
+.card-action__feel .fa-smile{
+  color: #ffaf40;
+}
+.card-action__feel .fa-heart{
+  color: #ff4d4d
+}
+/** ====================
+ * Box Comments
+ =======================*/
 .box-comment {
   -webkit-appearance:none;
   box-shadow: none;
   resize: none;
   border-right: 0;
+  border-radius: 16px;
 }
 .box-comment:focus {
   outline: none;
@@ -337,7 +385,54 @@ body {
   padding-right: 5px;
   border: 1px solid #ccc;
   border-left: 0;
-  border-radius: 0 4px 4px 0;
+  border-radius: 0 16px 16px 0;
+  font-size: inherit
+}
+
+/** ====================
+ * List Comments
+ =======================*/
+.comments-container {
+  margin-top: 15px;
+}
+.comments-list {
+  padding: 0;
+}
+.comments-list li {
+	margin-bottom: 15px;
+  list-style: none;
+}
+
+.reply-list {
+  margin-left: 43px;
+  border-left: 2px solid var(--main-color);
+  padding-left: 10px
+}
+.comments-list .comment-avatar {
+  flex-wrap: wrap;
+  margin-right: 5px;
+	width: 60px;
+	height: 60px;
+}
+.comment-avatar img {
+	width: 100%;
+  -webkit-border-radius: 999px;
+	-moz-border-radius: 999px;
+	border-radius: 999px;
+}
+.reply-list .comment-avatar {
+	width: 40px;
+	height: 40px;
+}
+.comment-main-level {
+  display: flex;
+  align-items: flex-start;
+}
+.comment-content {
+	background: #eff1f3;
+	padding: 5px 15px;
+	color: #1d2129;
+  border-radius: 18px;
 }
 
 /* Advertise */
