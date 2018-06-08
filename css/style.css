@@ -2,9 +2,11 @@
   --bg-dark: #26272a;
   --txt-dark: #bdbdbd;
   --txt-color: #fff;
-  --main-color: #5c5edc;
-  --main-color-hover: #8182e0;
-  --main-color-dark: #4749cc;
+  --main-color: #52276c;
+  --main-color-hover: #6a478e;
+  --main-color-dark: #2f095d;
+  --main-color-light: #a24d8c;
+  --main-color-light2: #eed7fb;
 }
 a, a:hover {
   text-decoration: none;
@@ -19,6 +21,12 @@ a {
 body {
   background: #e9ebee;
 }
+.bg-gradient {
+  background: linear-gradient(217deg, #221d68, #a85898);
+  background: -webkit-linear-gradient(217deg, #221d68, #a85898);
+  background: -moz-linear-gradient(217deg, #221d68, #a85898);
+  background: -ms-linear-gradient(217deg, #221d68, #a85898);
+}
 .fluid-column {
   overflow: hidden;
   height: 100vh;
@@ -26,6 +34,7 @@ body {
 .bg-dark {
   background-color: var(--bg-dark); !important;
 }
+
 /* Profile */
 .profile {
   padding: 0;
@@ -67,18 +76,21 @@ body {
 .profile__information li:before {
   content: "";
   border: solid 2px var(--main-color-hover);
+  display: block;
+  position: absolute;
   width: 8px;
   height: 8px;
-  border-radius: 50px;
-  -moz-border-radius: 50px;
-  -webkit-border-radius: 50px;
   font-size: 8px;
   margin-left: -25px;
   margin-top: 2px;
   font-weight: 400;
-  background: var(--main-color);
-  display: block;
-  position: absolute;
+  border-radius: 50px;
+  -moz-border-radius: 50px;
+  -webkit-border-radius: 50px;
+  background: linear-gradient(217deg, #221d68, #a85898);
+  background: -webkit-linear-gradient(217deg, #221d68, #a85898);
+  background: -moz-linear-gradient(217deg, #221d68, #a85898);
+  background: -ms-linear-gradient(217deg, #221d68, #a85898);
 }
 .profile__information li:first-child {
   padding-bottom: 10px;
@@ -168,10 +180,11 @@ body {
 }
 /* SideNav */
 .nav {
+  position: relative;
+  z-index: 2;
   margin: 0 -15px;
   padding: 5px 15px;
   border-radius: 0;
-  background-color: var(--main-color);
   color: var(--txt-color);
 }
 .search-input{
@@ -181,16 +194,70 @@ body {
   cursor: pointer;
   background: #f6f7f9;
 }
+.notify-bell, .notify-bell:hover {
+  color: var(--main-color-light2) !important;
+}
+.open .notify-bell {
+  background-color: transparent !important;
+  color: #fff !important;
+  border: none;
+}
 .notify {
   transform: translateY(25%);
 }
+.notify-tool {
+  padding: 0 8px;
+}
+.notify-tool p {
+  margin-bottom: 5px;
+}
+.notify-title {
+  color: #333;
+  font-weight: bold;
+}
+.notify-read-all:hover {
+  text-decoration: underline;
+}
 .notify__item {
-  color: #fff;
+  color: var(--main-color-light2);
   margin: 0 5px;
   cursor: pointer;
 }
 .notify__item:last-of-type {
   margin-right: 0;
+}
+.notify-wrapper {
+  top: 140%;
+  right: -15px;
+  width: 350px;
+  font-size: 12px;
+  border-radius: 0 0 4px 4px;
+}
+.notify-wrapper li {
+  border-bottom: 1px solid #ddd;
+}
+.notify-wrapper li a {
+  padding: 5px 8px;
+  white-space: inherit;
+}
+.notify-wrapper li:last-of-type {
+  border: none;
+}
+.notify-avatar {
+  width: 50px;
+  height: 50px;
+  margin-right: 5px;
+  float: left;
+}
+.notify-avatar img {
+  width: 100%;
+  border-radius: 100%;
+}
+.notify-type-msg {
+  margin: 0;
+}
+.notify-type-msg .fa-comment-alt {
+  color: var(--main-color-light);
 }
 .nav .container {
   width: 80%;
@@ -293,7 +360,6 @@ body {
   line-height: 47px;
   height: 47px;
   width: 47px;
-  background-color: var(--main-color);
   color: #fff;
   outline: none;
   transition: all ease .5s;
@@ -326,7 +392,7 @@ body {
 }
 .card-author a {
   font-weight: bold;
-  color: var(--main-color-dark)
+  color: var(--main-color-hover)
 }
 .card-time {
   color: var(--txt-dark);
@@ -437,5 +503,7 @@ body {
 
 /* Advertise */
 .advertise {
+  /*position: relative;*/
+  /*z-index: -1;*/
   padding-left: 5pt;
 }
