@@ -169,6 +169,7 @@ body {
   color: #fff;
 }
 .copyright {
+  letter-spacing: 2px;
   text-align: center;
   width: 100%;
   padding: 15px;
@@ -355,6 +356,7 @@ body {
   font-size: inherit;
 }
 .box-status__submit {
+  border: none;
   border-radius: 999px;
   text-align: center;
   line-height: 47px;
@@ -395,7 +397,7 @@ body {
   color: var(--main-color-hover)
 }
 .card-time {
-  color: var(--txt-dark);
+  color: #60666f;
   font-size: 12px;
 }
 .card-body {
@@ -501,9 +503,91 @@ body {
   border-radius: 18px;
 }
 
-/* Advertise */
+
+/** ====================
+ * ADVERTISE
+ =======================*/
 .advertise {
-  /*position: relative;*/
-  /*z-index: -1;*/
   padding-left: 5pt;
+}
+
+
+/** ====================
+ * CHAT BOX
+ =======================*/
+.panel-chat {
+  border: none;
+  margin: 0;
+  position: fixed;
+  bottom: 0;
+  right: 200px;
+  width: 260px;
+}
+.panel-chat .panel-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 12px;
+  text-transform: capitalize;
+  padding: 5px 15px;
+}
+.panel-chat .chat-username {
+  color: #fff;
+  font-weight: bold;
+}
+.panel-chat .chat-username:hover {
+  text-decoration: underline;
+}
+.panel-chat .chat-close {
+  cursor: pointer;
+  line-height: 10px;
+  color: var(--main-color-light2);
+}
+.panel-chat .chat-close:hover {
+  color: #fff;
+}
+.panel-chat .panel-body {
+  max-height: 280px;
+  overflow-y: scroll;
+}
+.panel-chat .chat-message {
+  display: flex;
+  margin-bottom: 10px;
+}
+.chat-message .avatar{
+  width: 30px;
+  height: 30px;
+  border-radius: 100%;
+  margin-right: 8px;
+  align-self: flex-end;
+}
+.chat-message.your-message p {
+  background-color: var(--main-color-light);
+  border-radius: 4px 18px;
+  color: #fff;
+  margin-right: 8px;
+}
+.chat-message p {
+  background-color: #f1f0f0;
+  padding: 10px;
+  border-radius: 18px 4px;
+  font-size: 13px;
+  width: 200px;
+  flex-wrap: wrap;
+}
+.panel-chat .panel-footer {
+  border: none;
+  border-radius: 0;
+}
+.panel-chat textarea {
+  width: 100%;
+  resize: none;
+  max-height: 120px;
+  border-radius: 18px;
+}
+.panel-chat textarea:empty {
+  height: 35px;
+}
+.panel-chat textarea:focus {
+  border-color: #ccc;
 }
