@@ -290,13 +290,14 @@ body {
   margin: 15px 0;
   position: relative;
 }
-.friend__item:hover {
+.friend__item:hover, .friend__item:focus {
   text-decoration: none;
 }
 .friend__img {
   display: inline-block;
   vertical-align: middle;
   width: 40px;
+  height: 40px;
   border-radius: 999px;
 }
 .friend__name {
@@ -515,13 +516,20 @@ body {
 /** ====================
  * CHAT BOX
  =======================*/
+ .chat-wrapper {
+   position: fixed;
+   bottom: 0;
+   right: 200px;
+   display: flex;
+   z-index: 3;
+ }
 .panel-chat {
+  margin: 0 5px;
   border: none;
-  margin: 0;
-  position: fixed;
-  bottom: 0;
-  right: 200px;
   width: 260px;
+}
+.panel-chat:last-of-type {
+  margin-right: 0;
 }
 .panel-chat .panel-heading {
   display: flex;
@@ -577,7 +585,9 @@ body {
 }
 .panel-chat .panel-footer {
   border: none;
+  border-top: 1px solid #ddd;
   border-radius: 0;
+  background-color: #fff;
 }
 .panel-chat textarea {
   width: 100%;

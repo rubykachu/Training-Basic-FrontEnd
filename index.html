@@ -470,19 +470,20 @@
           <!-- Side Friends -->
           <aside class="col-xs-2 side-friends affix-top">
             <p class="friend__title">danh sách bạn bè</p>
-            <a href="" class="friend__item">
+
+            <a href="" class="friend__item js-chat-people" data-name='Tang Quoc Minh' data-id='1'>
               <img alt="" class="friend__img" src="images/profile.jpg">
               <span class="friend__name">Tang Quoc Minh</span>
               <div class="friend_activity"></div>
             </a>
-            <a href="" class="friend__item">
-              <img alt="" class="friend__img" src="images/profile.jpg">
-              <span class="friend__name">Tang Quoc Minh</span>
+            <a href="" class="friend__item js-chat-people" data-name='Do Thanh Vinh' data-id='2'>
+              <img alt="" class="friend__img" src="images/vinh.jpg">
+              <span class="friend__name">Do Thanh Vinh</span>
               <div class="friend_activity"></div>
             </a>
-            <a href="" class="friend__item">
-              <img alt="" class="friend__img" src="images/profile.jpg">
-              <span class="friend__name">Tang Quoc Minh</span>
+            <a href="" class="friend__item js-chat-people" data-name='Nguyen Le Duy' data-id='3'>
+              <img alt="" class="friend__img" src="images/duy.jpg">
+              <span class="friend__name">Nguyen Le Duy</span>
               <div class="friend_activity"></div>
             </a>
           </aside>
@@ -496,34 +497,35 @@
   </div>
   <!-- / Wrapper -->
 
-  <div class="panel panel-chat">
-    <div class="panel-heading bg-gradient">
-      <a href="#" class="chat-username"><span>Minh Tang Q.</span></a>
-      <a href="#" class="chat-close"><i class="glyphicon glyphicon-remove"></i></a>
-    </div>
-    <div class="panel-body">
-      <div class="chat-message">
-        <img src="images/profile.jpg" alt="" class="avatar"/>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempora aut porro quidem corrupti molestias voluptates, dolor, impedit at perspiciatis reprehenderit, aliquid molestiae fuga odio alias dolorum earum suscipit repellat laboriosam?</p>
+  <div class="chat-wrapper">
+    <!-- <div class="panel panel-chat">
+      <div class="panel-heading bg-gradient">
+        <a href="#" class="chat-username"><span>Minh Tang Q.</span></a>
+        <a href="#" class="chat-close"><i class="glyphicon glyphicon-remove"></i></a>
       </div>
-      <div class="chat-message your-message">
-        <p>Lorem ipsum dolor sit amet</p>
-        <img src="images/profile.jpg" alt="" class="avatar"/>
+      <div class="panel-body">
+        <div class="chat-message">
+          <img src="images/profile.jpg" alt="" class="avatar"/>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempora aut porro quidem corrupti molestias voluptates, dolor, impedit at perspiciatis reprehenderit, aliquid molestiae fuga odio alias dolorum earum suscipit repellat laboriosam?</p>
+        </div>
+        <div class="chat-message your-message">
+          <p>Lorem ipsum dolor sit amet</p>
+          <img src="images/profile.jpg" alt="" class="avatar"/>
+        </div>
+        <div class="chat-message your-message">
+          <p>Lorem ipsum dolor sit amet</p>
+          <img src="images/profile.jpg" alt="" class="avatar"/>
+        </div>
+        <div class="chat-message">
+          <img src="images/profile.jpg" alt="" class="avatar"/>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempora aut porro quidem corrupti molestias voluptates, dolor, impedit at perspiciatis reprehenderit, aliquid molestiae fuga odio alias dolorum earum suscipit repellat laboriosam?</p>
+        </div>
       </div>
-      <div class="chat-message your-message">
-        <p>Lorem ipsum dolor sit amet</p>
-        <img src="images/profile.jpg" alt="" class="avatar"/>
+      <div class="panel-footer">
+        <textarea name="message" class="form-control" placeholder="Nhập tin nhắn..."></textarea>
       </div>
-      <div class="chat-message">
-        <img src="images/profile.jpg" alt="" class="avatar"/>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempora aut porro quidem corrupti molestias voluptates, dolor, impedit at perspiciatis reprehenderit, aliquid molestiae fuga odio alias dolorum earum suscipit repellat laboriosam?</p>
-      </div>
-    </div>
-    <div class="panel-footer">
-      <textarea name="message" class="form-control" placeholder="Nhập tin nhắn..."></textarea>
-    </div>
+    </div> -->
   </div>
-
 
   <!-- jQuery library -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
@@ -538,6 +540,46 @@
       // $.mCustomScrollbar.defaults.scrollButtons.enable=true; //enable scrolling buttons by default
       $.mCustomScrollbar.defaults.axis="y"; //enable 2 axis scrollbars by default
       $("#js-wall-wrapper").mCustomScrollbar({theme:"rounded-dark"});
+
+      // Open chatbox
+      $('.js-chat-people').on('click', function(){
+        chatbox = render_chatbox('Hello', 1)
+        $('.chat-wrapper').prepend(chatbox);
+        return false;
+      });
+
+      function render_chatbox(username, user_id) {
+        html = "\
+        <div class='panel panel-chat'> \
+          <div class='panel-heading bg-gradient'> \
+            <a href='#' class='chat-username'><span>" + username + "</span></a> \
+            <a href='#' class='chat-close'><i class='glyphicon glyphicon-remove'></i></a> \
+          </div> \
+          <div class='panel-body'> \
+            <div class='chat-message'> \
+              <img src='images/profile.jpg' class='avatar'/> \
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempora aut porro quidem corrupti molestias voluptates, dolor, impedit at perspiciatis reprehenderit, aliquid molestiae fuga odio alias dolorum earum suscipit repellat laboriosam?</p> \
+            </div> \
+            <div class='chat-message your-message'> \
+              <p>Lorem ipsum dolor sit amet</p> \
+              <img src='images/profile.jpg' class='avatar'/> \
+            </div> \
+            <div class='chat-message your-message'> \
+              <p>Lorem ipsum dolor sit amet</p> \
+              <img src='images/profile.jpg' class='avatar'/> \
+            </div> \
+            <div class='chat-message'> \
+              <img src='images/profile.jpg' class='avatar'/> \
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempora aut porro quidem corrupti molestias voluptates, dolor, impedit at perspiciatis reprehenderit, aliquid molestiae fuga odio alias dolorum earum suscipit repellat laboriosam?</p> \
+            </div> \
+          </div> \
+          <div class='panel-footer'> \
+            <textarea name='message' class='form-control' placeholder='Nhập tin nhắn...'></textarea> \
+          </div> \
+        </div> \
+        "
+        return html;
+      }
     });
 	</script>
 </body>
