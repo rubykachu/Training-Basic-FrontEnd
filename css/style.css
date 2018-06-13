@@ -21,6 +21,13 @@ a {
 body {
   background: #e9ebee;
 }
+.friend_activity {
+  background: rgb(66, 183, 42);
+  border-radius: 50%;
+  display: inline-block;
+  height: 6px;
+  width: 6px;
+}
 .bg-gradient {
   background: linear-gradient(217deg, #221d68, #a85898);
   background: -webkit-linear-gradient(217deg, #221d68, #a85898);
@@ -182,7 +189,7 @@ body {
 /* SideNav */
 .nav {
   position: relative;
-  z-index: 2;
+  z-index: 9;
   margin: 0 -15px;
   padding: 5px 15px;
   border-radius: 0;
@@ -285,37 +292,41 @@ body {
   color: #4c4c4c
 }
 .friend__item {
-  display: block;
+  display: flex;
+  align-items: center;
+  position: relative;
   width: 100%;
   margin: 15px 0;
-  position: relative;
 }
 .friend__item:hover, .friend__item:focus {
   text-decoration: none;
 }
 .friend__img {
-  display: inline-block;
-  vertical-align: middle;
-  width: 40px;
-  height: 40px;
-  border-radius: 999px;
+  margin-right: 4px;
+  width: 35px;
+  height: 35px;
+  -webkit-border-radius: 999px;
+     -moz-border-radius: 999px;
+      -ms-border-radius: 999px;
+          border-radius: 999px;
+  -webkit-box-shadow: 0 1px 1px 0 rgba(0, 0, 0, .4);
+    -moz-box-shadow: 0 1px 1px 0 rgba(0, 0, 0, .4);
+     -ms-box-shadow: 0 1px 1px 0 rgba(0, 0, 0, .4);
+         box-shadow: 0 1px 1px 0 rgba(0, 0, 0, .4);
 }
 .friend__name {
   color: #4c4c4c;
   font-size: 12px;
   padding-left: 2px;
-}
-.friend_activity {
-  position: absolute;
-  right: 0;
-  top: 50%;
-  transform: translateY(-50%);
-  background: rgb(66, 183, 42);
-  border-radius: 50%;
+  margin-right: 10px;
+  width: 65%;
   display: inline-block;
-  height: 6px;
-  width: 6px;
-  margin-left: 4px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+.side-friends .friend_activity {
+  float: right;
 }
 
 /** ====================
@@ -352,6 +363,7 @@ body {
   box-shadow: none;
   resize: none;
   min-height: 60px;
+  max-height: 300px;
 }
 .box-status .input-group-btn {
   font-size: inherit;
@@ -516,17 +528,22 @@ body {
 /** ====================
  * CHAT BOX
  =======================*/
- .chat-wrapper {
-   position: fixed;
-   bottom: 0;
-   right: 200px;
-   display: flex;
-   z-index: 3;
- }
 .panel-chat {
-  margin: 0 5px;
-  border: none;
+  position: fixed;
+  bottom: 0;
+  z-index: 9;
   width: 260px;
+  height: 336px;
+  margin: 0;
+  border: none;
+}
+.panel-chat .friend_activity {
+  margin-right: 4px;
+  margin-left: -6px;
+  -webkit-transform: translateY(-25%);
+     -moz-transform: translateY(-25%);
+      -ms-transform: translateY(-25%);
+          transform: translateY(-25%);
 }
 .panel-chat:last-of-type {
   margin-right: 0;
@@ -538,6 +555,7 @@ body {
   font-size: 12px;
   text-transform: capitalize;
   padding: 5px 15px;
+  cursor: pointer;
 }
 .panel-chat .chat-username {
   color: #fff;
@@ -546,12 +564,12 @@ body {
 .panel-chat .chat-username:hover {
   text-decoration: underline;
 }
-.panel-chat .chat-close {
+.panel-chat .chat-remove {
   cursor: pointer;
   line-height: 10px;
   color: var(--main-color-light2);
 }
-.panel-chat .chat-close:hover {
+.panel-chat .chat-remove:hover {
   color: #fff;
 }
 .panel-chat .panel-body {
@@ -600,4 +618,25 @@ body {
 }
 .panel-chat textarea:focus {
   border-color: #ccc;
+}
+.panel-chat .panel-content {
+  height: 308px;
+  display: flex;
+  flex-direction: column;
+}
+.bg-panel-chat--hide .panel-heading{
+  background: #f6f7f9;
+  box-shadow: 0 1px 1px 0 rgba(0, 0, 0, .20);
+}
+.bg-panel-chat--hide .chat-username, .bg-panel-chat--hide .chat-remove {
+  color: #5a5e64;
+}
+.bg-panel-chat--hide .chat-remove:hover {
+  color: #444950
+}
+.bg-panel-chat--hide .chat-remove {
+  visibility: hidden;
+}
+.bg-panel-chat--hide:hover .chat-remove {
+  visibility: visible;
 }
