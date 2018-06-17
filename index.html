@@ -6,6 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <!-- Latest compiled and minified CSS -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Satisfy" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/jquery.mCustomScrollbar.min.css">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
@@ -13,28 +14,27 @@
   <title>M-Blogs</title>
 </head>
 <body>
-  <div class="wrapper">
+<div class="wrapper">
+  <div class="container-fluid">
     <div class="row">
 
       <!-- Profile -->
       <aside class="col-xs-2 fluid-column bg-dark profile">
-        <div class="profile__card">
-          <span class="profile__name">Minh Tang Q.</span><br>
-          <span class="profile__job">Developer Ruby</span>
+
+        <div class="logo">
+          <h1>Ease your life</h1>
         </div>
 
-        <figure class="profile__image">
-          <!-- <img src="images/profile.jpg" alt=""> -->
-        </figure>
+        <div class="profile__card">
+          <figure class="profile__image">
+            <img src="images/profile.jpg" alt="">
+          </figure>
+          <figcaption>
+            <span class="profile__name">Minh Tang Q.</span><br>
+            <span class="profile__job">Developer Ruby</span>
+          </figcaption>
+        </div>
 
-        <ul class="profile__information">
-            <li></li>
-            <li><p><i class="far fa-address-card"></i> Tăng Quốc Minh</p></li>
-            <li><p><i class="far fa-calendar-alt"></i> 27 May 1992</p></li>
-            <li><p><i class="fas fa-code-branch"></i> Developer Ruby</p></li>
-            <li><p><i class="far fa-envelope"></i> minh.tang@asiantech.vn</p></li>
-            <li><p><i class="fas fa-mobile-alt"></i> 0961 834 678</p></li>
-        </ul>
 
         <div class="profile__social">
           <!-- Socials -->
@@ -509,156 +509,20 @@
       <!-- Wall -->
 
     </div>
-  </div>
-  <!-- / Wrapper -->
+  </div> <!-- / Container fluid -->
+</div>
+<!-- / Wrapper -->
 
-  <div class="chat-wrapper">
-    <!-- <div class="panel panel-chat">
-      <div class="panel-heading bg-gradient">
-        <a href="#" class="chat-username"><span>Minh Tang Q.</span></a>
-        <a href="#" class="chat-close"><i class="glyphicon glyphicon-remove"></i></a>
-      </div>
-      <div class="panel-content">
-        <div class="panel-body">
-          <div class="chat-message">
-            <img src="images/profile.jpg" alt="" class="avatar"/>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempora aut porro quidem corrupti molestias voluptates, dolor, impedit at perspiciatis reprehenderit, aliquid molestiae fuga odio alias dolorum earum suscipit repellat laboriosam?</p>
-          </div>
-          <div class="chat-message your-message">
-            <p>Lorem ipsum dolor sit amet</p>
-            <img src="images/profile.jpg" alt="" class="avatar"/>
-          </div>
-          <div class="chat-message your-message">
-            <p>Lorem ipsum dolor sit amet</p>
-            <img src="images/profile.jpg" alt="" class="avatar"/>
-          </div>
-          <div class="chat-message">
-            <img src="images/profile.jpg" alt="" class="avatar"/>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempora aut porro quidem corrupti molestias voluptates, dolor, impedit at perspiciatis reprehenderit, aliquid molestiae fuga odio alias dolorum earum suscipit repellat laboriosam?</p>
-          </div>
-        </div>
-        <div class="panel-footer">
-          <textarea name="message" class="form-control" placeholder="Nhập tin nhắn..."></textarea>
-        </div>
-      </div>
-    </div> -->
-  </div>
+  <div class="chat-wrapper"></div>
 
   <!-- jQuery library -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <!-- Latest compiled JavaScript -->
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   <!-- Resize textarea -->
+  <script src='js/jquery.session.js'></script>
   <script src='js/autosize.min.js'></script>
   <script src='js/jquery.mCustomScrollbar.js'></script>
-	<script>
-    var user_ids_in_chatbox = []
-
-    $(document).ready(function(){
-      // $.mCustomScrollbar.defaults.scrollButtons.enable = true; //enable scrolling buttons by default
-      $.mCustomScrollbar.defaults.axis="y"; //enable 2 axis scrollbars by default
-      $("#js-wall-wrapper").mCustomScrollbar({theme:"rounded-dark"});
-
-      // Autosize textarea
-      $(document).on('focus', 'textarea', function(e){ autosize(e.target); })
-
-      // Get width sidebar friend
-      var width_sidebar_friend = $('.side-friends').outerWidth();
-
-      // Open chatbox
-      $('.js-chatlist-people').on('click', function(){
-        var username = $(this).data('name'),
-            user_id = $(this).data('id');
-
-        // if user_id isset
-        if ($.inArray(user_id, user_ids_in_chatbox) != -1) {
-          return false;
-        }
-        user_ids_in_chatbox.push(user_id);
-        console.log('Push:' + user_ids_in_chatbox);
-
-        $('.chat-wrapper').append( render_chatbox(username, user_id) );
-        displayChatBox();
-        return false;
-      });
-
-      // Remove chatbox
-      $(document).on('click', '.chat-remove', function() {
-        var $this = $(this),
-            id = $this.data('id'),
-    		    $chatbox = $('#chatbox-' + id) ;
-    		$chatbox.remove();
-    		user_ids_in_chatbox.splice($.inArray(id, user_ids_in_chatbox), 1);
-
-    		displayChatBox();
-    		return false;
-    	});
-
-      // Toggle chatbox
-      $(document).on('click', '.js-chatbox-head', function(){
-        var $this = $(this),
-            $chatbox = $this.parent(),
-            height_heading = $this.outerHeight(),
-            height_chatbox = $chatbox.outerHeight(),
-            bottom = height_chatbox - height_heading
-
-        if ( parseInt($chatbox.css('bottom')) < 0 ) {
-          $chatbox.css('bottom', 0).removeClass('bg-panel-chat--hide')
-        } else {
-          $chatbox.css('bottom', '-' + bottom + 'px').addClass('bg-panel-chat--hide');
-        }
-      });
-
-      function displayChatBox(){
-  	    i = 200 ; // start position
-    		j = 270;  //next position
-
-    		$.each( user_ids_in_chatbox, function( index, value ) {
-    		  if(index < 4){
-    	      $('#chatbox-' + value).css("right",i);
-    			  $('#chatbox-' + value).show();
-    		    i = i + j;
-    		  } else{
-    			  $('#chatbox-' + value).hide();
-    		  }
-        });
-    	}
-
-      function render_chatbox(username, user_id) {
-        html = "\
-          <div class='panel panel-chat' id='chatbox-"+ user_id +"' style='right: 200px'> \
-            <div class='panel-heading bg-gradient js-chatbox-head'> \
-              <a href='#' class='chat-username'><span class='friend_activity'></span><span>"+ username +"</span></a> \
-              <a href='#' class='chat-remove' data-id='"+ user_id +"'><i class='glyphicon glyphicon-remove'></i></a> \
-            </div> \
-            <div class='panel-content'> \
-              <div class='panel-body'> \
-                <div class='chat-message'> \
-                  <img src='images/profile.jpg' class='avatar'/> \
-                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempora aut porro quidem corrupti molestias voluptates, dolor, impedit at perspiciatis reprehenderit, aliquid molestiae fuga odio alias dolorum earum suscipit repellat laboriosam?</p> \
-                </div> \
-                <div class='chat-message your-message'> \
-                  <p>Lorem ipsum dolor sit amet</p> \
-                  <img src='images/profile.jpg' class='avatar'/> \
-                </div> \
-                <div class='chat-message your-message'> \
-                  <p>Lorem ipsum dolor sit amet</p> \
-                  <img src='images/profile.jpg' class='avatar'/> \
-                </div> \
-                <div class='chat-message'> \
-                  <img src='images/profile.jpg' class='avatar'/> \
-                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempora aut porro quidem corrupti molestias voluptates, dolor, impedit at perspiciatis reprehenderit, aliquid molestiae fuga odio alias dolorum earum suscipit repellat laboriosam?</p> \
-                </div> \
-              </div> \
-              <div class='panel-footer'> \
-                <textarea name='message' class='form-control' placeholder='Nhập tin nhắn...'></textarea> \
-              </div> \
-            </div> \
-          </div> \
-        "
-        return html;
-      }
-    });
-	</script>
+  <script src='js/chatbox.js'></script>
 </body>
 </html>
